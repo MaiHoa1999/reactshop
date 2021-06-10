@@ -10,7 +10,7 @@ let initalState = {
 let Context = React.createContext(initalState)
 
 export default function TranslateProvider({children, translate}){
-    let [state, setstate] = useState(...initalState, ...translate);
+    let [state, setstate] = useState({...initalState, ...translate});
     function t(key){
         return state?.[state.default]?.[key] || key
     }

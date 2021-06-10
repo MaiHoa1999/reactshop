@@ -1,5 +1,5 @@
-import Auth from "../../service/auth";
-import { LOGIN ,LOGOUT,ERROR,UPDATE} from "../type";
+import Auth from "../reducer/authReducer";
+import { LOGIN ,LOGOUT,ERROR,UPDATE,REGISTER} from "../type";
 
 export function loginAction(data){
     return{
@@ -8,6 +8,14 @@ export function loginAction(data){
 
     }
 }
+export function registerAction(data){
+    return{
+        type: REGISTER,
+        payload: data
+
+    }
+}
+
 export function logoutAction(){
     return{
         type: LOGOUT,
@@ -35,3 +43,6 @@ export function updateAction(data){
         }
     }
 }
+
+
+  

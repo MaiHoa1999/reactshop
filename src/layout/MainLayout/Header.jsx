@@ -339,7 +339,7 @@ export function Header(){
               </li>
               <li className="nav-item dropdown position-static">
                 {/* Toggle */}
-                <NavLink className="nav-link" to="/auth">auth</NavLink>
+                <NavLink className="nav-link" to="/auth">Auth</NavLink>
                 {/* Menu */}
                
               </li>
@@ -351,7 +351,7 @@ export function Header(){
               </li>
               <li className="nav-item dropdown">
                 {/* Toggle */}
-                <NavLink className="nav-link" to="/">account</NavLink>
+                <NavLink className="nav-link" to="/faq">Faq</NavLink>
                 {/* Menu */}
                 
               </li>
@@ -362,18 +362,18 @@ export function Header(){
                
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/docs">Docs</NavLink>
+                <NavLink className="nav-link" to="/about">About</NavLink>
               </li>
             </ul>
             {/* Nav */}
             <ul className="navbar-nav flex-row">
               <li className="nav-item">
-                <NavLink className="nav-link" data-toggle="modal" to="#modalSearch">
+                <NavLink className="nav-link"  to="#modalSearch">
                   <i className="fe fe-search" />
                 </NavLink>
               </li>
               <li className="nav-item ml-lg-n4">
-                <NavLink className="nav-link" to="/account/order">
+                <NavLink className="nav-link" to="/account/personalinfo">
                   <i className="fe fe-user" />
                 </NavLink>
               </li>
@@ -383,7 +383,7 @@ export function Header(){
                 </NavLink>
               </li>
               <li className="nav-item ml-lg-n4">
-                <NavLink className="nav-link" data-toggle="modal" to="#modalShoppingCart">
+                <NavLink className="nav-link"  to="#modalShoppingCart">
                   <span data-cart-items={2}>
                     <i className="fe fe-shopping-cart" />
                   </span>

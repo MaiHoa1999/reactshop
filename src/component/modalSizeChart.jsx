@@ -1,6 +1,6 @@
 import reactDom from "react-dom";
 
-export default function ModalSizeChart(){
+export  function ModalSizeChart(){
     return reactDom.createPortal(
         <>
              <div className="modal fade" id="modalSizeChart" tabIndex={-1} role="dialog" aria-hidden="true">

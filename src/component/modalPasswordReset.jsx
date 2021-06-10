@@ -1,6 +1,6 @@
 import reactDom from "react-dom";
 
-export default function ModalPasswordReset(){
+export function ModalPasswordReset(){
     return reactDom.createPortal(
         <>
             <div className="modal fade" id="modalPasswordReset" tabIndex={-1} role="dialog" aria-hidden="true">

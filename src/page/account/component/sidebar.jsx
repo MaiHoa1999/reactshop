@@ -8,7 +8,7 @@ export default function SideBar(){
                   <NavLink className="list-group-item list-group-item-action dropright-toggle " to={`${match.path}/order`}>
                     Orders
                   </NavLink>
-                  <NavLink className="list-group-item list-group-item-action dropright-toggle " to={`${match.path}/wishlist`}>
+                  <NavLink className="list-group-item list-group-item-action dropright-toggle" to={`${match.path}/wishlist`}>
                     Widhlist
                   </NavLink>
                   <NavLink className="list-group-item list-group-item-action dropright-toggle " to={`${match.path}/personalinfo`}>
