@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-import authReducer from "./reducer/authReducer";
+import authReducer from "./reducer/AuthReducer";
 let reducer = combineReducers({
   auth: authReducer,
 });

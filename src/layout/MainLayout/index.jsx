@@ -1,7 +1,7 @@
 import { Footer } from "./Footer"
 import { Header } from "./Header"
 import{ ModalProduct,ModalSearch, ModalShoppingCart,ModalWaitList,ModalSizeChart,ModalPasswordReset}from '../../component/index'
-import { RouteWithSubRoutes } from "../../core/routerConfig"
+import { RouteWithSubRoutes } from "../../core/RouterConfig"
 import { Switch } from "react-router"
 
 

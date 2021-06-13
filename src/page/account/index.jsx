@@ -1,7 +1,7 @@
 
-import SideBar from "./component/sidebar";
+import SideBar from "./component/Sidebar";
 import {  Switch} from 'react-router-dom'
-import { RouteWithSubRoutes } from "../../core/routerConfig";
+import { RouteWithSubRoutes } from "../../core/RouterConfig";
 export default function Account({routes}){
     return(
         <section className="pt-7 pb-12">

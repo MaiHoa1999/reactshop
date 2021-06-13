@@ -1,4 +1,5 @@
-export default function ProductItem({thumbnail_url,price,name}){
+import { Link } from "react-router-dom"
+export default function ProductItem({thumbnail_url,price,name,slug}){
     return(
         <div className="col-6 col-md-4">
           {/* Card */}
@@ -10,9 +11,9 @@ export default function ProductItem({thumbnail_url,price,name}){
             {/* Image */}
             <div className="card-img">
               {/* Image */}
-              <a href="#!">
+              <Link to={`/product/${slug}`}>
                 <img className="card-img-top card-img-front" src={thumbnail_url} alt="..." />
-              </a>
+              </Link>
               {/* Actions */}
               <div className="card-actions">
                 <span className="card-action">

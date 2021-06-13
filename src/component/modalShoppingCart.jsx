@@ -1,14 +1,25 @@
 import reactDom from "react-dom";
 
-export function ModalShoppingCart(){
-    return reactDom.createPortal(
-        <>
-            <div className="modal fixed-right fade" id="modalShoppingCart" tabIndex={-1} role="dialog" aria-hidden="true">
+export function ModalShoppingCart() {
+  return reactDom.createPortal(
+    <>
+      <div
+        className="modal fixed-right fade"
+        id="modalShoppingCart"
+        tabIndex={-1}
+        role="dialog"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-vertical" role="document">
           {/* Full cart (add `.d-none` to disable it) */}
           <div className="modal-content">
             {/* Close */}
-            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+            <button
+              type="button"
+              className="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
               <i className="fe fe-x" aria-hidden="true" />
             </button>
             {/* Header*/}
@@ -22,13 +33,20 @@ export function ModalShoppingCart(){
                   <div className="col-4">
                     {/* Image */}
                     <a href="./product.html">
-                      <img className="img-fluid" src="/img/products/product-6.jpg" alt="..." />
+                      <img
+                        className="img-fluid"
+                        src="/img/products/product-6.jpg"
+                        alt="..."
+                      />
                     </a>
                   </div>
                   <div className="col-8">
                     {/* Title */}
                     <p className="font-size-sm font-weight-bold mb-6">
-                      <a className="text-body" href="./product.html">Cotton floral print Dress</a> <br />
+                      <a className="text-body" href="./product.html">
+                        Cotton floral print Dress
+                      </a>{" "}
+                      <br />
                       <span className="text-muted">$40.00</span>
                     </p>
                     {/*Footer */}
@@ -40,7 +58,10 @@ export function ModalShoppingCart(){
                         <option value={1}>3</option>
                       </select>
                       {/* Remove */}
-                      <a className="font-size-xs text-gray-400 ml-auto" href="#!">
+                      <a
+                        className="font-size-xs text-gray-400 ml-auto"
+                        href="#!"
+                      >
                         <i className="fe fe-x" /> Remove
                       </a>
                     </div>
@@ -52,13 +73,20 @@ export function ModalShoppingCart(){
                   <div className="col-4">
                     {/* Image */}
                     <a href="./product.html">
-                      <img className="img-fluid" src="/img/products/product-10.jpg" alt="..." />
+                      <img
+                        className="img-fluid"
+                        src="/img/products/product-10.jpg"
+                        alt="..."
+                      />
                     </a>
                   </div>
                   <div className="col-8">
                     {/* Title */}
                     <p className="font-size-sm font-weight-bold mb-6">
-                      <a className="text-body" href="./product.html">Suede cross body Bag</a> <br />
+                      <a className="text-body" href="./product.html">
+                        Suede cross body Bag
+                      </a>{" "}
+                      <br />
                       <span className="text-muted">$49.00</span>
                     </p>
                     {/*Footer */}
@@ -70,7 +98,10 @@ export function ModalShoppingCart(){
                         <option value={1}>3</option>
                       </select>
                       {/* Remove */}
-                      <a className="font-size-xs text-gray-400 ml-auto" href="#!">
+                      <a
+                        className="font-size-xs text-gray-400 ml-auto"
+                        href="#!"
+                      >
                         <i className="fe fe-x" /> Remove
                       </a>
                     </div>
@@ -80,18 +111,31 @@ export function ModalShoppingCart(){
             </ul>
             {/* Footer */}
             <div className="modal-footer line-height-fixed font-size-sm bg-light mt-auto">
-              <strong>Subtotal</strong> <strong className="ml-auto">$89.00</strong>
+              <strong>Subtotal</strong>{" "}
+              <strong className="ml-auto">$89.00</strong>
             </div>
             {/* Buttons */}
             <div className="modal-body">
-              <a className="btn btn-block btn-dark" href="./checkout.html">Continue to Checkout</a>
-              <a className="btn btn-block btn-outline-dark" href="./shopping-cart.html">View Cart</a>
+              <a className="btn btn-block btn-dark" href="./checkout.html">
+                Continue to Checkout
+              </a>
+              <a
+                className="btn btn-block btn-outline-dark"
+                href="./shopping-cart.html"
+              >
+                View Cart
+              </a>
             </div>
           </div>
           {/* Empty cart (remove `.d-none` to enable it) */}
           <div className="modal-content d-none">
             {/* Close */}
-            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+            <button
+              type="button"
+              className="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
               <i className="fe fe-x" aria-hidden="true" />
             </button>
             {/* Header*/}
@@ -110,7 +154,7 @@ export function ModalShoppingCart(){
           </div>
         </div>
       </div>
-        </>,
-        document.getElementById('root2')
-    )
+    </>,
+    document.getElementById("root2")
+  );
 }

@@ -1,10 +1,11 @@
-import Banner from './component/banner'
-import Features from './component/features'
-import BestPicks from './component/bestPicks'
-import TopSeller from './component/topSells'
-import CountDown from './component/countdown'
-import Review from './component/review'
-import Brand from './component/brand'
+import Banner from './component/Banner'
+import Features from './component/Features'
+import BestPicks from './component/BestPicks'
+import TopSeller from './component/TopSells'
+import CountDown from './component/Countdown'
+import Review from './component/Review'
+import Brand from './component/Brand'
+import Promo from '../../component/Promo'
 
 export default function Home(){
     return(
@@ -12,20 +13,7 @@ export default function Home(){
         {/* Newsletter: Horizontal */}
        
         {/* PROMO */}
-        <div className="py-3 bg-dark bg-pattern mb-4">
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                {/* Text */}
-                <div className="text-center text-white">
-                  <span className="heading-xxs letter-spacing-xl">
-                    ⚡️ Happy Holiday Deals on Everything ⚡️
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <Promo/>
         {/* CATEGORIES */}
        <Banner/>
         {/* FEATURES */}

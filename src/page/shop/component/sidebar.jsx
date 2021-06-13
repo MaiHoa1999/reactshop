@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
-import ShopApi from "../../../sevice/shoppro";
+import { Link } from "react-router-dom";
+import {convertQueryToObject} from '../../../utils/QueryUrl'
 
-export function Sidebar() {
-  let [category, setCategory] = useState();
-  useEffect(async () => {
-    let res = await ShopApi.getcategory();
-    console.log(`res`, res);
-    setCategory(res);
-  }, []);
-  if (!category) return "load";
+
+export function Sidebar({ category }) {
+  let obj = convertQueryToObject();
+
   return (
     <form className="mb-10 mb-md-0">
       <ul className="nav nav-vertical" id="filterNav">
@@ -26,10 +22,15 @@ export function Sidebar() {
             <div className="form-group">
               <ul className="list-styled mb-0" id="productsNav">
                 {category?.map((value) => (
-                  <li className="list-styled-item">
-                    <a className="list-styled-link" href="#">
+                  <li key={value.id} className="list-styled-item">
+                    <Link
+                      className={`list-styled-link ${
+                        obj.categories == value.id ? "active-categories" : ""
+                      } `}
+                      to={`/shop?categories=${value.id}`}
+                    >
                       {value.title}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

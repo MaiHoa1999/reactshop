@@ -1,0 +1,12 @@
+.text-error {
+  font-size: 18px;
+  font-style: italic;
+  color: red;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.active-categories {
+  font-weight: bold;
+  color: #ff6f61 !important;
+}

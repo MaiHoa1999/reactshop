@@ -1,46 +1,55 @@
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
+import {   convertOjectToQuery, convertQueryToObject } from "../utils/QueryUrl";
 
-export default function Pagination({currentPage,totalPage}){
-    return(
-        <nav className="d-flex justify-content-center justify-content-md-end">
-        <ul className="pagination pagination-sm text-gray-400">
-         {
-           currentPage>1 &&
-           <li className="page-item">
-            <Link className="page-link page-link-arrow" href="#">
+export default function Pagination({ currentPage, totalPage }) {
+  let match = useRouteMatch
+  function render() {
+    if(totalPage === 1) return []
+    let start = currentPage - 2;
+    if(start < 1) start =1
+    let end = currentPage + 2;
+    if( end> totalPage){
+      end = totalPage
+    }
+    let list = [];
+
+    for (let i = start; i <= end; i++) {
+      let objUrl = convertQueryToObject()
+      objUrl.page =i
+      let queryString =  convertOjectToQuery(objUrl)
+      list.push(
+        <li className={`page-item ${currentPage === i ? "active" : ""} `}>
+          <Link className="page-link" to={`${match.url}?${queryString}`}>
+            {i}
+          </Link>
+        </li>
+      );
+    }
+    return list;
+  }
+
+  
+  return (
+    <nav className="d-flex justify-content-center justify-content-md-end">
+      <ul className="pagination pagination-sm text-gray-400">
+        {currentPage > 1 && (
+          <li className="page-item">
+            <Link className="page-link page-link-arrow" to={`${match.url}?${ convertOjectToQuery({...convertQueryToObject(), page: currentPage -1})}`}>
               <i className="fa fa-caret-left" />
             </Link>
           </li>
-         }
-         
-          <li className="page-item active">
-            <a className="page-link" href="#">1</a>
-          </li>
+        )}
+{
+  render()
+}
+        {currentPage < totalPage && (
           <li className="page-item">
-            <a className="page-link" href="#">2</a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">3</a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">4</a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">5</a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">6</a>
-          </li>
-          {
-            currentPage < totalPage && 
-            <li className="page-item">
-            <Link className="page-link page-link-arrow" href="#">
+            <Link className="page-link page-link-arrow" to={`${match.url}?${ convertOjectToQuery({...convertQueryToObject(), page: currentPage +1})}`}>
               <i className="fa fa-caret-right" />
             </Link>
           </li>
-          }
-        
-        </ul>
-      </nav>
-    )
+        )}
+      </ul>
+    </nav>
+  );
 }
