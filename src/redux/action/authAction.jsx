@@ -1,4 +1,4 @@
-import Auth from "../reducer/AuthReducer";
+import Auth from "../../sevice/Auth"
 import { LOGIN, LOGOUT, ERROR, UPDATE, REGISTER } from "../type";
 
 export function loginAction(data) {

@@ -11,7 +11,7 @@ export default function Shop() {
   console.log("  obj.categories", obj.categories);
   let [category, setCategory] = useState();
   useEffect(async () => {
-    let res = await ShopApi.getcategory();
+    let res = await ShopApi.getCategory();
     setCategory(res);
   }, []);
   if (!category) return "load";

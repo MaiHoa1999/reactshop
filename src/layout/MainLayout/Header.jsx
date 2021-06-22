@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useTranslate } from "../../core/Translate";
 
@@ -6,6 +7,7 @@ export function Header() {
   function changeLang(lan) {
     selectLang(lan);
   }
+  let cart = useSelector((state) => state.cart);
   return (
     <>
       <div
@@ -564,9 +566,15 @@ export function Header() {
                   data-toggle="modal"
                   href="#modalShoppingCart"
                 >
-                  <span data-cart-items={10}>
-                    <i className="fe fe-shopping-cart" />
-                  </span>
+                  {cart?.num > 0 ? (
+                    <span data-cart-items={cart?.num}>
+                      <i className="fe fe-shopping-cart" />
+                    </span>
+                  ) : (
+                    <span data-cart-items={0}>
+                      <i className="fe fe-shopping-cart" />
+                    </span>
+                  )}
                 </a>
               </li>
             </ul>

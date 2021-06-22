@@ -1,5 +1,17 @@
+import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
-export default function ProductItem({thumbnail_url,price,name,slug}){
+import { addCart } from "../redux/action/CartAction";
+export default function ProductItem(props){
+  const {
+    slug,
+    thumbnail_url,
+    name,
+    price,
+    real_price,
+   
+  } = props;
+  let dispatch = useDispatch();
+
     return(
         <div className="col-6 col-md-4">
           {/* Card */}
@@ -22,8 +34,9 @@ export default function ProductItem({thumbnail_url,price,name,slug}){
                   </button>
                 </span>
                 <span className="card-action">
-                  <button className="btn btn-xs btn-circle btn-white-primary" data-toggle="button">
+                  <button className="btn btn-xs btn-circle btn-white-primary" data-toggle="button" onClick={() => dispatch(addCart({ ...props }))}>
                     <i className="fe fe-shopping-cart" />
+                    
                   </button>
                 </span>
                 <span className="card-action">

@@ -1,20 +1,17 @@
+import Api from "../core/classApi";
 import { endpoint } from "./Config";
 
 const ShopApi = {
-  getproduct(str) {
-    return fetch(
-      `http://cfd-reactjs.herokuapp.com/product?${str}`
-    ).then((res) => res.json());
-  },
-  getcategory() {
-    return fetch(`http://cfd-reactjs.herokuapp.com/categories`).then((res) =>
-      res.json()
-    );
-  },
-  //   relatedProduct(slug) {
-  //     return fetch(
-  //       `http://cfd-reactjs.herokuapp.com/elearning/v4/course-related/${slug}`
-  //     ).then((res) => res.json());
-  //   },
+  getProduct (str){
+    return Api.get(`product?${str}`)
+  }
+,
+getCategory(){
+  return Api.get(`categories`)
+}
+,
+productDetail(slug){
+  return (fetch(`${endpoint}product?slug=${slug}`).then(res => res.json()))
+}
 };
 export default ShopApi;

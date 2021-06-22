@@ -31,10 +31,10 @@ export function Content({ category }) {
   }, []);
 
   useEffect(async () => {
-    let res = await ShopApi.getproduct(str);
+    let res = await ShopApi.getProduct(str);
     setState({
       data: res.data,
-      paginate: res.data,
+      paginate: res.paginate,
     });
   }, [str]);
 
@@ -208,7 +208,7 @@ export function Content({ category }) {
           <ProductItem key={value.slug} {...value} />
         ))}
       </div>
-      <Pagination paginate={state.paginate} />
+      <Pagination {...state.paginate} />
     </>
   );
 }

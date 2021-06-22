@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import "./asset/style.css";
 import { BrowserRouter, Switch } from "react-router-dom";
 import store from "./redux";
-import { RouteWithSubRoutes } from "./core/routerConfig";
+import { RouteWithSubRoutes } from "./core/RouterConfig";
 import TranslateProvider from "./core/Translate.jsx";
 import vi from "./translate/vi.json";
 import china from "./translate/china.json";

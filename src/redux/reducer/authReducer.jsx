@@ -10,11 +10,13 @@ let initState = {
 export default function authReducer(state = initState, action) {
   if (action.type === LOGIN) {
     localStorage.setItem("login", JSON.stringify(action.payload));
+    localStorage.setItem("token", JSON.stringify(action.payload.token));
     return {
       ...state,
       login: action.payload,
     };
   }
+
   if (action.type === LOGOUT) {
     localStorage.setItem("login", false);
     return {

@@ -1,4 +1,14 @@
-export function ProDetail(){
+import { useEffect, useRef } from "react";
+export function ProDetail( {images,name,price,real_price}){
+  let $ = window.$;
+  let ref = useRef();
+  useEffect(() => {
+    $(ref.current).flickity({ 
+       draggable: false,
+      fade: true
+    });
+  }, []);
+
     return(
         <section>
           <div className="container">
@@ -13,7 +23,7 @@ export function ProDetail(){
                         Sale
                       </div>
                       {/* Slider */}
-                      <div className="mb-4" data-flickity="{&quot;draggable&quot;: false, &quot;fade&quot;: true}" id="productSlider">
+                      <div className="mb-4" ref={ref} id="productSlider">
                         {/* Item */}
                         <a href="/img/products/product-7.jpg" data-fancybox>
                           <img src="/img/products/product-7.jpg" alt="..." className="card-img-top" />
@@ -79,10 +89,10 @@ export function ProDetail(){
                       </div>
                     </div>
                     {/* Heading */}
-                    <h3 className="mb-2">Leather Sneakers</h3>
+                    <h3 className="mb-2">{name}</h3>
                     {/* Price */}
                     <div className="mb-7">
-                      <span className="font-size-lg font-weight-bold text-gray-350 text-decoration-line-through">$115.00</span>
+                      <span className="font-size-lg font-weight-bold text-gray-350 text-decoration-line-through">${price}</span>
                       <span className="ml-1 font-size-h5 font-weight-bolder text-primary">$85.00</span>
                       <span className="font-size-sm ml-1">(In Stock)</span>
                     </div>
